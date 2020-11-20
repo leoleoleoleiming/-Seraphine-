@@ -46,9 +46,13 @@ setScreenMetrics(1080, 2340);
 swipe(570, 1660, 590, 700, 2000);
 //反系统作弊检测
 
+sleep(35000);
+/*
 sleep(40000);
 setScreenMetrics(1080, 2340);
 click(75, 175);
+*/
+back();
 //执行返回主页
 
 setTimeout(function(){ engines.execScriptFile("ArticleRead_7.js");}, 3000);

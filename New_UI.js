@@ -18,17 +18,18 @@ ui.layout(
                         <text textColor = "#FF0000" textSize="16sp">2-使用时给与软件无障碍权限（需要每次手动打开）</text> 
                         <text textColor = "#FF0000" textSize="16sp">3-使用软件功能前确保后台未运行学习强国，如果运行了关闭即可</text> 
                         <text textSize = "28sp" textStyle ="bold">注意事项</text>
-                        <text text="1-使用该软件确保关闭QQ等软件的弹窗" textColor="black" textSize="16sp"/>                        
-                        <text text="2-按下音量下键可以中途退出脚本运行" textColor="red" textSize="16sp"/>
+                        <text text="1-使用该软件尽量确保关闭QQ等软件的弹窗" textColor="black" textSize="16sp"/> 
+                        <text text="2-检查更新软件功能没写，更新需要手动更新" textColor="black" textSize="16sp"/>                         
+                        <text text="3-按下音量下键可以中途退出脚本运行" textColor="red" textSize="16sp"/>
                         <text textSize = "28sp" textStyle ="bold">软件功能</text>
-                        <text text="1-现在基本上一套流程下来是28分" textColor="black" textSize="16sp"/>
+                        <text text="1-现在基本上一套流程下来是28分（大概18min，我没计算过）+ （你需要做的）加上手动答题差不很轻松40分+（大概5min）" textColor="black" textSize="16sp"/>
                         <text text="2-后续完善30分精准刷，然后就是完全版大概40分+" textColor="black" textSize="16sp"/>
                         <text text="3-精准版起码也得等我考完试，完全版怎么也得寒假才可能写出来" textColor="black" textSize="16sp"/>
                         <text text="4-软件启动在左侧栏第一个项目" textColor="red" textSize="16sp"/>
                         <text textSize = "28sp" textStyle ="bold">声明</text>
                         <text text="1-有BUG可以反馈给我，我看看我头发多不多" textColor="black" textSize="16sp"/>
-                        <text text="2-目前软件内测ing....." textColor="black" textSize="16sp"/>
-                        <text text="3-软件仅供学习交流使用，后续源码会发布到Git上面进行开源" textColor="black" textSize="16sp"/>
+                        <text text="2-软件仅供学习交流使用，后续源码会发布到Git上面进行开源" textColor="black" textSize="16sp"/>
+                        <text text="3-如果你拿到该资源，请于24小时内卸载，软件仅学习交流使用，如果利用该软件进行非法牟利等活动，本人概不负责" textColor="red" textSize="16sp"/>
 
                     </vertical>
                 </frame>
@@ -79,6 +80,7 @@ ui.emitter.on("resume", function() {
 });
 
 ui.myweb.loadUrl("http://leoleiming.cn");
+//网址栏
 
 //创建选项菜单(右上角)
 ui.emitter.on("create_options_menu", menu=>{
@@ -93,7 +95,7 @@ ui.emitter.on("options_item_selected", (e, item)=>{
     switch(item.getTitle()){
         
         case "联系作者":
-            toast("本人精通C# unity3D 3Dmax Aegisub PS PR AE的单词的拼写，精通window开关机");
+            toast("本人精通C# unity3D 3Dmax Aegisub PS PR AE的单词的拼写，精通window开关机和硬件的暴力安装");
             var qq号 = "738232585";
             app.startActivity({
             action: "android.intent.action.VIEW",
@@ -102,10 +104,10 @@ ui.emitter.on("options_item_selected", (e, item)=>{
             })
             break;
         case "优化说明":
-            alert("优化说明:\n优化思路 更改大部分坐标点击，底层换为文字识别或者控件识别,\n1-优化底层架构，现在基本上是28分全\n2-优化UI交互\n3-功能拓展,新增无障碍开启按钮\n4-修复功能不可多次运行\n5-修复需要手动开启学习强国非wifi视频自动播放\n补：近期可能会安排增加随机回复评论，定时任务在写了");
+            alert("优化说明:\n更改点击方式为文字识别+控件识别，单线程全自动\n1-重写底层架构，现在基本上是28分全\n2-优化UI交互\n3-功能拓展,新增无障碍开启按钮\n4-修复功能不可多次运行\n5-修复需要手动开启学习强国非wifi视频自动播放\n补充：\n近期可能会安排增加“随机评论”“定时任务”“自动答题");
             break;
         case "软件关于":
-            alert("关于：\n这差不就是这个UI不会再改了，可能后续版本加悬浮窗控制，暂时停止更新，因为我要考试了，考神保佑，后面我再慢慢优化\n软件版本："+app.versionName+"\n版本类型:"+ app.versionCode);
+            alert("关于：\n这差不就是这个UI不会再改了，可能后续版本加悬浮窗控制，暂时停止更新，目前将就着能用，因为我要考试了，考神保佑，后面我再慢慢优化\n软件版本："+app.versionName+"\n版本类型: " + app.versionCode);
             break;
         case "退出软件":
             ui.finish();

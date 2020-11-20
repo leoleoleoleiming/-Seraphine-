@@ -4,12 +4,16 @@
 原理：弹窗提示用户注意事项，确认则开始调用脚本，取消则退出脚本
 声明：代码仅供交流使用
 */
-toast("请打开软件的无障碍权限");
-auto.waitFor();
-//请求无障碍权限，弹到设置页面
+if(auto.waitFor())
+    {
+        sleep(1000);
+        toast("请打开软件的无障碍权限");
+        
+    }
+//判断是否打开无障碍授权，否则弹到设置页面
 
 events.observeKey();
-//启用按键监听
+//启用按键监听,按下音量下键关闭所有脚本运行
 events.onKeyDown("volume_down", function(event){
     toast("正在结束运行")
     //文本进度反馈
@@ -32,6 +36,7 @@ if(appName){
 }
 else{
     exit()
+    toast("未找到学习强国APP，请下载安装后重试")
 }
 sleep(2000);
 toast("每日首次登陆");
