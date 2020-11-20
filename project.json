@@ -1,0 +1,29 @@
+{
+  "assets": [],
+  "build": {
+    "build_id": "8FA5B89E-8",
+    "build_number": 8,
+    "build_time": 1604855728238,
+    "release": false
+  },
+  "encryptLevel": 1,
+  "useFeatures": [],
+  "icon": "res/icon.png",
+  "launchConfig": {
+    "displaySplash": true,
+    "hideLogs": true,
+    "splashIcon": "res/splashIcon.png",
+    "splashText": "Seraphine永远滴神",
+    "stableMode": false
+  },
+  "main": "New_UI.js",
+  "name": "Seraphine",
+  "optimization": {
+    "removeOpenCv": false,
+    "unusedResources": false
+  },
+  "packageName": "cn.Seraphine.love",
+  "scripts": {},
+  "versionCode": 2020,
+  "versionName": "2.0.0"
+}
