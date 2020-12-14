@@ -17,5 +17,5 @@ className("android.widget.LinearLayout").clickable(true).findOne().click();
 //返回主页
 setTimeout(function(){ engines.execScriptFile("VideoWatch.js");}, 3000);
 //3秒后调用第4个脚本
-toast("正在进行试听任务");
+toastLog("正在进行视听说任务");
 //输出文本进度

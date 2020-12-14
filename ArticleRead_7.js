@@ -58,6 +58,6 @@ back();
 
 setTimeout(function(){ engines.execScriptFile("BroadcastingStationWatch.js");}, 3000);
 //调用第八个脚本
-toast("正在打开本地电台频道");
+toastLog("正在打开本地电台频道");
 //程序进度提醒
 

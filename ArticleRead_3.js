@@ -20,12 +20,21 @@ sleep(1000);
 setScreenMetrics(1080, 2340);
 swipe(530, 1990, 575, 420, 2000);
 //反系统作弊检测
+sleep(1000);
+toastLog("正在收藏");
+sleep(500);
+//找到小星星控件
+collect_star = className("android.widget.ImageView").depth(10).findOne();
+collect_star.click();
+//收藏文章并提示进度
 
 sleep(1000);
-toast("正在分享");
-var star = className("android.widget.FrameLayout").clickable(true).findOne();
-click(star.bounds().centerX()+300,star.bounds().centerY());
+toastLog("正在分享");
+var share_icon = className("android.widget.ImageView").depth(10).drawingOrder(4).findOne();
+share_icon.click();
 //点击分享
+
+/*
 sleep(1500);
 click("分享到");
 //点击分享到学习强国
@@ -36,19 +45,34 @@ click(share_part.bounds().centerX(),share_part.bounds().centerY());
 sleep(1500);
 click("发送",1);
 //点击发生，完成分享
+*/
+
+sleep(2000);
+var share_choice = text("分享到学习强国").id("txt_gv_item").findOne().parent();
+sleep(2000);
+//点击分享
+share_choice.click();
+//停留5秒
+sleep(5000);
+//返回新闻主体内容界面    
+back();
 
 sleep(5000);
 setScreenMetrics(1080, 2340);
 swipe(570, 1660, 590, 700, 2000);
 //反系统作弊检测
 
+sleep(35000);
+/*
 sleep(40000);
 setScreenMetrics(1080, 2340);
 click(75, 175);
+*/
+back();
 //执行返回主页
 
 setTimeout(function(){ engines.execScriptFile("ArticleRead_4.js");}, 3000);
 //调用第二个脚本
-toast("正在进行第四篇文章阅读");
+toastLog("正在进行第四篇文章阅读");
 //程序进度提醒
 

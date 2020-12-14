@@ -46,13 +46,17 @@ setScreenMetrics(1080, 2340);
 swipe(570, 1660, 590, 700, 2000);
 //反系统作弊检测
 
+sleep(35000);
+/*
 sleep(40000);
 setScreenMetrics(1080, 2340);
 click(75, 175);
+*/
+back();
 //执行返回主页
 
 setTimeout(function(){ engines.execScriptFile("ArticleRead_5.1.js");}, 3000);
 //调用第二个脚本
-toast("正在进行第四篇备用文章阅读");
+toastLog("正在进行第四篇备用文章阅读");
 //程序进度提醒
 

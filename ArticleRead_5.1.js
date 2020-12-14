@@ -58,6 +58,6 @@ back();
 
 setTimeout(function(){ engines.execScriptFile("ArticleRead_5.js");}, 3000);
 //调用第二个脚本
-toast("正在进行第五篇文章阅读");
+toastLog("正在进行第五篇文章阅读");
 //程序进度提醒
 
