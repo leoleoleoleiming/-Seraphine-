@@ -22,31 +22,33 @@ dialogs.build({
   //对话框标题
   title: "注意事项",
   //对话框内容
-  content: "1-音量下键停止功能运行\n2-请选择是否今天第一次运行",
+  content: "1-音量下键停止功能运行\n2-订阅功能下线",
   contentColor:"red",
   
-  //确定键内容
-  positive: "今天是第一次运行",
-  //取消键内容
-  negative: "今天不是第一次运行",
+  //第一个键内容
+  //positive: "今天是第一次运行",
+  //第二个键内容
+  negative: "已阅读相关事项并开始",
   //第三个按键
   neutral: "我再想想",
   
 
-}).on("positive", ()=>{
+/*}).on("positive", ()=>{
   //监听确定键
   var appName = ("学习强国");
   if(appName){
-      launchApp(appName);
-      //启动学习强国
+    //启动学习强国  
+    launchApp(appName);
   }
   else{
       exit()
       toastLog("未找到学习强国APP，请下载安装后重试")
   }
   
+  //显示控制台
   console.show()
   
+  //运行计时
   function main() {
     threads.start(
       function () {
@@ -57,10 +59,11 @@ dialogs.build({
       }
     )
   
+    //输出进度提示//
     toastLog("每日首次登陆");
-    //输出进度提示*/
-    setTimeout(function(){ engines.execScriptFile("Subscribe.js");},3000);
     //3秒后调用第一个脚本
+    setTimeout(function(){ engines.execScriptFile("Subscribe.js");},3000);
+    
   }
   var runTime = function () {
     var startTime = new Date().getTime()
@@ -73,6 +76,7 @@ dialogs.build({
   main()
 
 toastLog("每日首次登陆");
+*/
 }).on("negative", ()=>{
   //监听取消键
   var appName = ("学习强国");

@@ -143,6 +143,7 @@ ui.menu.setDataSource([
   }
 ]);
 
+//侧边栏监听
 ui.menu.on("item_click", item => {
     switch(item.title){
         case "启动科技强国":
